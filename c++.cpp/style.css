@@ -1,0 +1,398 @@
+/*-- ====== Google Fonts ====== --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;   
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 80px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover, 
+.navigation ul li.hovered {
+    background: var(--white)
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+    color: var(--blue);
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none; 
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none; 
+}
+
+/*================= Main =====================*/
+.main{
+    position:absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle {
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    padding: 0 40px 0 20px;
+    padding-left: 35px;
+    border: 1px solid var(--black2);
+    border-radius: 20px;
+    background: var(--gray);
+    font-size: 18px;
+    outline: none;
+}
+
+.search label ion-icon {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 20px;
+    color: var(--black);
+}
+
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*================= Thẻ =====================*/
+
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.card {
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.card .numbers {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--blue);
+}
+
+.card .cardName {
+    color: var(--black2);
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.card .iconBx {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 3rem;
+    color: var(--black2);
+}
+
+.card:hover {
+    background: var(--blue);
+}
+
+.card:hover .numbers,
+.card:hover .cardName,
+.card:hover .iconBx {
+    color: var(--white);
+}
+
+/*================= Chart =====================*/
+.details {
+    display: flex;
+    gap: 20px; 
+    padding: 20px;
+}
+
+.chart-card {
+    flex: 2; 
+}
+
+.chart-container {
+    display: none;
+    width: 100%;
+    padding: 10px 0; 
+}
+
+.chart-container.active {
+    display: block;
+}
+
+canvas {
+    height: 300px; 
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.extra-card {
+    flex: 1; 
+    position: relative; 
+}
+
+.extra-space {
+    height: 100%; 
+    width: 100%;
+    padding: 20px;
+    background: var(--gray); 
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.extra-card .cardHeader {
+    padding: 0 30px 10px;
+    text-align: center;
+}
+
+.extra-card .cardHeader h2 {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--blue);
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.extra-card:hover {
+    background: var(--blue); 
+}
+
+.extra-card:hover .cardHeader h2 {
+    color: var(--white); 
+}
+
+.chart-container {
+    display: none; 
+    width: 100%;
+    height: 400px; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.chart-container.active {
+    display: block; 
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 400px;
+}
+
+.chart-card .cardHeader {
+    padding: 0 30px 10px;
+    text-align: center; 
+    
+}
+
+.chart-card .cardHeader h2 {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--blue);
+    margin-bottom: 10px; 
+    transition: color 0.3s; 
+}
+
+.chart-card:hover .cardHeader h2 {
+    color: var(--white); 
+}
+
+/*================= Trang chủ =====================*/
+#home-content {
+    display: none;
+    padding: 0;
+    height: calc(100vh -60px);
+    background: var(--white);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-content.active {
+    display: block;
+}
+
+#main-content {
+    display: block;
+}
