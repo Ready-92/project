@@ -592,16 +592,20 @@ canvas {
     to { transform: scale(1); opacity: 1; }
 }
 
-.close-modal {
+.close-btn {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 2rem;
+    top: 2.75px;
+    right: 15px;
+    font-size: 2.5rem;
     color: var(--black2);
     cursor: pointer;
     transition: 0.2s;
 }
-.close-modal:hover { color: red; }
+
+.close-btn:hover {
+    color: red;
+    border-radius: 50%;
+}
 
 /* Form Input trong Modal (Style giống thanh Search gốc) */
 .modal-group {
