@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Top Website thịnh hành</title>
+</head>
+<body>
+    <!--  ===========Thanh điều hướng========== -->
+    <div class="container">
+        <div class="navigation active">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="globe-outline"></ion-icon>
+                        </span>
+                        <span class="title">Trang web</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showHome()">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Trang chủ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showChart(0)">
+                        <span class="icon">
+                            <ion-icon name="logo-google"></ion-icon>
+                        </span>
+                        <span class="title">Google</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showChart(1)">
+                        <span class="icon">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </span>
+                        <span class="title">Youtube</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showChart(2)">
+                        <span class="icon">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </span>
+                        <span class="title">Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showChart(3)">
+                        <span class="icon">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </span>
+                        <span class="title">Instagram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showChart(4)">
+                        <span class="icon">
+                            <ion-icon name="logo-tiktok"></ion-icon>
+                        </span>
+                        <span class="title">Tiktok</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showChart(5)">
+                        <span class="icon">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </span>
+                        <span class="title">Github</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showChart(6)">
+                        <span class="icon">
+                            <ion-icon name="logo-reddit"></ion-icon>
+                        </span>
+                        <span class="title">Reddit</span>
+                    </a>
+                </li>   
+            </ul>
+        </div>
+
+        <!-- ========== Main ========== -->
+        <div class="main active">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" id="search-input" placeholder="Tìm kiếm" autocomplete="off">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="image.png" alt="">
+                </div>
+            </div>
+            <!-- Nội dung chính -->
+             <div id="main-content" style="display: none;"> 
+            <!-- ============== Thẻ ============= -->
+                <div class="cardBox">
+                    <div class="card" id="access-card">
+                    <div class="numbers">3,2 B></div>
+                    <div class="cardName">Truy cập hằng ngày</div>
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+                    <div class="card" id="search-card">
+                    <div class="numbers">16,4 B</div>
+                    <div class="cardName">Lượt tìm kiếm mỗi ngày</div>
+                    <div class="iconBx">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </div>
+                </div>
+                    <div class="card" id="transaction-card">
+                    <div class="numbers">900 M</div>
+                    <div class="cardName">Giao dịch mỗi ngày</div>
+                    <div class="iconBx">
+                        <ion-icon name="trail-sign-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card" id="interaction-card">
+                    <div class="numbers">19 B</div>
+                    <div class="cardName">Tương tác mỗi ngày</div>
+                    <div class="iconBx">
+                        <ion-icon name="heart-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!--============ Details ============== -->
+            <div class="details">
+                <div class="card chart-card" style="flex: 2;">
+                    <div class="cardHeader">
+                        <h2>Biểu đồ truy cập</h2>
+                    </div>
+                    <div class="chart-container active" id="chart0">
+                        <canvas id="trafficChart0"></canvas>
+                    </div>
+                    <div class="chart-container" id="chart1">
+                        <canvas id="trafficChart1"></canvas>
+                    </div>
+                    <div class="chart-container" id="chart2">
+                        <canvas id="trafficChart2"></canvas>
+                    </div>
+                    <div class="chart-container" id="chart3">
+                        <canvas id="trafficChart3"></canvas>
+                    </div>
+                    <div class="chart-container" id="chart4">
+                        <canvas id="trafficChart4"></canvas>
+                    </div>
+                    <div class="chart-container" id="chart5">
+                        <canvas id="trafficChart5"></canvas>
+                    </div>
+                    <div class="chart-container" id="chart6">
+                        <canvas id="trafficChart6"></canvas>
+                    </div>
+                </div>
+                <div class="card extra-card" style="flex: 1;">
+                    <div class="cardHeader">
+                        <h2>Phần bổ sung</h2>
+                    </div>
+                    <div class="extra-space">
+                    
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- ============== Home content ==============-->
+             <div id="home-content" style="display: block;">
+                <div class="home-cardBox">
+                    <div class="home-card1">
+                        <div class="home-space">
+                            <div class="iconBx">                    
+                                <img id="top-logo" src="" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3645/3645245.png'">
+                            </div>
+                        </div>
+                        <div class="sub-title">Website có lượng truy cập cao nhất</div>
+                    </div>  
+
+                    <div class="home-card2">                                    
+                        <div class="list-card">
+                            <div class="list-header">
+                            <h3>Top website có lượt truy cập cao nhất</h3>
+                            <button class="btn-open-modal" onclick="toggleModal()">+ Thêm website</button>
+                        </div>
+                        <div class="lb-scroll" id="list-view"></div>
+                        <div id="modal-overlay" class="modal-overlay">
+                            <div class="modal-content">
+                                <span class="close-btn" onclick="toggleModal()">&times;</span>
+                                <div class="admin-panel">
+                                    <h3>Thêm website mới</h3>   
+                                    <div class="input-group">
+                                        <label>Tên website:</label>
+                                        <input type="text" id="inpName" placeholder="Nhập tên website...">
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Lượng truy cập:</label>
+                                        <input type="text" id="inpTraffic" placeholder="Nhập lượng truy cập...">
+                                    </div>
+                                    <button class="btn-submit" onclick="handleAddClick()">Cập nhật</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>    
+            </div>
+
+        </div>
+    </div>
+
+    <!--========== Scripts =========-->
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- ======= ionicons ====== -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+</body>
+
+</html>
